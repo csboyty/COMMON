@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="webkit" name="renderer">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="keywords" content="YaLuoYe"/>
+    <meta name="description" content="YaLuoYe">
+    <title>后台管理</title>
+    <!--<base href="http://localhost/cidic-artifacts/ca/frontend/">-->
+
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
+
+    <link href="css/src/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="header">
+    <h1 class="logo">xxxxx</h1>
+    <a href="#" class="logout">退出</a>
+</div>
+
+<nav class="left">
+
+    <ul class="menu">
+
+        <li class="item">
+            <span class="glyphicon glyphicon-flag"></span>
+            <a class="link" href="mgr.html">管理</a>
+        </li>
+        <li class="item">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <a class="link">子菜单</a>
+            <span class="glyphicon glyphicon-chevron-down rightIcon"></span>
+            <ul class="subMenu">
+                <li class="sItem">
+                    <span class="circle">原点</span>
+                    <a class="sLink" href="#">子菜单1</a>
+                </li>
+                <li class="sItem">
+                    <span class="circle">原点</span>
+                    <a class="sLink" href="#">子菜单2</a>
+                </li>
+                <li class="sItem">
+                    <span class="circle">原点</span>
+                    <a class="sLink" href="#">子菜单3</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
+
+<section class="right">
+    <article class="main">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">新建/修改成果</h1>
+            </div>
+            <div class="panel-body" id="opt-body">
+                <form class="form-horizontal" id="myForm" action="#" method="post">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">封面图*</label>
+                            <div class="col-md-10" id="uploadContainer">
+                                <a href="#" class="btn btn-success" id="uploadBtn">上传</a>
+                                <p class="help-block">请上传510x330的jpg，png</p>
+                                <img  id="image"  style="width:100px"
+                                      src="images/app/defaultPeopleImage.jpg"/>
+                                <input type="hidden" id="imageUrl" name="image">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">名称*</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="control-label col-md-2">介绍*</label>
+                            <div class="col-md-8">
+                                <textarea class="form-control"  name="intro" rows="3" id="intro"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-8">
+                                <button type="submit" class="btn btn-success form-control">确定</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </article>
+</section>
+
+<div class="loading hidden" id="loading">
+    <span class="text">Loading...</span>
+</div>
+
+
+
+<script src="js/lib/jquery-2.0.3.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/lib/jquery.toastmessage.js"></script>
+<script src="js/lib/plupload.full.min.js"></script>
+<script src="js/lib/qiniu.js"></script>
+<script src="js/lib/tinymce.min.js"></script>
+<script src="js/lib/jquery.validate.min.js"></script>
+<script src="js/lib/jquery.serialize-object.min.js"></script>
+<script src="js/src/config.js"></script>
+<script src="js/src/functions.js"></script>
+<script src="js/src/create.js"></script>
+
+</body>
+</html>
