@@ -1,4 +1,4 @@
-html{
+﻿html{
     height: 100%;
     width: 100%;
 }
@@ -52,7 +52,7 @@ body{
     margin-right: 10px;
 }
 .ctrlInput{
-    width: 224px;
+    width: 250
     height: 32px;
     border: #abacb3 solid 1px;
     border-radius: 4px;
