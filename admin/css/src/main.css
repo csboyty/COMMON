@@ -122,15 +122,15 @@ label.error{
 .menu .item:hover .subMenu{
     display: block;
 }
-.subMenu{
+.menu .subMenu{
     background: #f9f9f2;
     display: none;
 }
-.subMenu .sItem{
+.menu .subMenu .sItem{
     height: 35px;
     position: relative;
 }
-.subMenu .sItem .circle {
+.menu .subMenu .sItem .circle {
     width: 10px;
     height: 10px;
     border-radius: 5px;
@@ -140,7 +140,7 @@ label.error{
     margin-left: 30px;
     margin-top: 15px;
 }
-.subMenu .sItem .sLink{
+.menu .subMenu .sItem .sLink{
     font-size: 12px;
     color: #727171;
     display: inline-block;
@@ -152,10 +152,10 @@ label.error{
     height: 100%;
     padding-left: 25px;
 }
-.subMenu .sItem:hover .circle {
+.menu .subMenu .sItem:hover .circle {
     background: #5dc05f;
 }
-.subMenu .sItem:hover .sLink{
+.menu .subMenu .sItem:hover .sLink{
     color: #5dc05f;
 }
 
