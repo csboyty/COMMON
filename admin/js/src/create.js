@@ -61,7 +61,8 @@ $(document).ready(function(){
         uploadContainer:"uploadContainer",
         fileAddCb:null,
         progressCb:null,
-        uploadedCb:function(info,file,up){
+        uploadedCb:function(info,file,up){        	
+            //后台的up-token里面要注明返回图片信息
             if(info.w==500&&info.h==500){
                 $("#imageUrl").val(info.url);
 
