@@ -8,10 +8,15 @@ var login=(function(config,functions){
                 }
             }
         },
-        rememberMe:function(params){
+        rememberMe:function(params,remember){
             var i= 0,length=params.length;
             for(;i<length;i++){
-                functions.setCookie(params[i]["name"],params[i]["value"],7);
+                if(remember){
+                    functions.setCookie(params[i]["name"],params[i]["value"],7);
+                }else{
+                    functions.deleteCookie(params[i]["name"]);
+                }
+
             }
         }
     }
@@ -20,7 +25,7 @@ $(document).ready(function(){
     /*$("#captchaRefresh").click(function(){
         $(this).find("img").attr("src","s/captcha.jpg?"+Math.random());
         return false;
-    });
+    });*/
 
     login.initMe([{
         name:"email",
@@ -28,7 +33,7 @@ $(document).ready(function(){
     },{
         name:"password",
         el:$("#password")
-    }]);*/
+    }]);
 
     $("#myForm").validate({
         rules: {
@@ -54,6 +59,14 @@ $(document).ready(function(){
             }
         },
         submitHandler:function(form){
+            login.rememberMe([{
+                name:"email",
+                el:$("#email")
+            },{
+                name:"password",
+                el:$("#password")
+            }],$("#rememberMe").prop("checked"));
+
             form.submit();
         }
     });

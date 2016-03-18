@@ -16,8 +16,8 @@ body{
 }
 .pCenter{
     position: absolute;
-    height: 350px;
-    width: 410px;
+    height: 380px;
+    width: 450px;
     background:#fff;
     left:50%;
     top:50%;
@@ -45,14 +45,18 @@ body{
 .row{
     width: 80%;
     margin: 10px auto 10px auto;
+    font-size: 14px;
 }
 .ctrlLabel{
     color: #727171;
     font-size: 16px;
     margin-right: 10px;
+    width: 60px;
+    display: inline-block;
+    text-align: right;
 }
 .ctrlInput{
-    width: 250
+    width: 224px;
     height: 32px;
     border: #abacb3 solid 1px;
     border-radius: 4px;
@@ -66,7 +70,7 @@ body{
     border: 1px solid #4cae4c;
     background: #5cb85c;
     border-radius: 4px;
-    margin-left: 46px;
+    margin-left: 74px;
 }
 .ctrlBtn:hover{
     background: #4cae4c;
@@ -85,5 +89,5 @@ label.error{
     color: red;
     font-size: 14px;
     display: block;
-    margin-left: 46px;
+    margin-left: 74px;
 }
