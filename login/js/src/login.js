@@ -35,6 +35,12 @@ $(document).ready(function(){
         el:$("#password")
     }]);
 
+    /*$("#myForm").keydown(function(event){
+        if(event.keyCode==13){
+            $("input[type='submit']").fireEvent("click");
+        }
+    });*/
+
     $("#myForm").validate({
         rules: {
             email: {
@@ -61,10 +67,10 @@ $(document).ready(function(){
         submitHandler:function(form){
             login.rememberMe([{
                 name:"email",
-                el:$("#email")
+                value:$("#email").val()
             },{
                 name:"password",
-                el:$("#password")
+                value:$("#password").val()
             }],$("#rememberMe").prop("checked"));
 
             form.submit();

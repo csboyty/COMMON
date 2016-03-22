@@ -91,10 +91,11 @@ $(document).ready(function(){
         $(this).val($(this).val().trim());
     });
 
-    //火狐里面阻止form提交
-    $("input[type='text'],input[type='password']").keydown(function(e){
+    //阻止form提交
+    $("form").keydown(function(e){
         if(e.keyCode==13){
             return false;
         }
     });
 });
+
