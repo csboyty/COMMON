@@ -20,7 +20,7 @@ document.write('<ul class="menu">'+
                 '<li class="sItem">'+
                     '<span class="circle">原点</span>'+
                     '<a class="sLink" href="#">子菜单3</a>'+
-                '</li>
-            '</ul>
-        '</li>
+                '</li>'+
+            '</ul>'+
+        '</li>'+
     '</ul>');
