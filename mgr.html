@@ -8,51 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name="keywords" content="xxxx"/>
     <meta name="description" content="xxxx">
-    <title>xxxx后台管理</title>
+    <title>后台管理</title>
     <!--<base href="http://localhost/cidic-artifacts/ca/frontend/">-->
 
     <link href="css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
     <link href="css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
     <link href="css/src/main.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"></script>
 </head>
 <body>
 
-<div class="header">
-    <h1 class="logo">xxxxx</h1>
-    <a href="#" class="logout">退出</a>
-</div>
+<div id="headerWrapper"></div>
+<script src="header.js"></script>
 
 <div class="left">
-
-    <ul class="menu">
-
-        <li class="item">
-            <span class="glyphicon glyphicon-flag"></span>
-            <a class="link" href="mgr.html">管理</a>
-        </li>
-        <li class="item">
-            <span class="glyphicon glyphicon-th-list"></span>
-            <a class="link">子菜单</a>
-            <span class="glyphicon glyphicon-chevron-down rightIcon"></span>
-            <ul class="subMenu">
-                <li class="sItem">
-                    <span class="circle">原点</span>
-                    <a class="sLink" href="#">子菜单1</a>
-                </li>
-                <li class="sItem">
-                    <span class="circle">原点</span>
-                    <a class="sLink" href="#">子菜单2</a>
-                </li>
-                <li class="sItem">
-                    <span class="circle">原点</span>
-                    <a class="sLink" href="#">子菜单3</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-
-</nav>
+    <div id="menuWrapper"></div>
+    <script src="menu.js"></script>
+</div>
 
 <div class="right">
     <div class="main">
@@ -61,6 +34,38 @@
                 <h1 class="panel-title">评论管理</h1>
             </div>
             <div class="panel-body" id="opt-body">
+                
+                <div class="row">
+                    <a class="btn btn-primary newBtn" href="create.html">
+                    <span class="glyphicon glyphicon-plus"></span> 新建
+                </a>
+                <div class="input-group tableSearchContainer col-md-6">
+                    <input type="text" id="searchContent" class="form-control" placeholder="内容">
+                    <span class="input-group-btn">
+                        <button id="searchBtn" class="btn btn-default" type="button">搜索</button>
+                    </span>
+                </div>
+                </div>
+                
+                <table id="myTable" class="dataTable">
+                    <thead>
+                    <tr>
+                        <th>内容</th>
+                        <th>评论者</th>
+                        <th>评论产品</th>
+                        <th>回复</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<tr>
+                        <td><span title="评论的内容">评论的内容</span></td>
+                        <td><a href="userDetail/1">用户1</a></td>
+                        <td><a href="proDetail/1">产品1</a></td>
+                        <td><a href="#" class="reply">回复</a>&nbsp;<a href="#" class="delete">删除</a></td>
+                    </tr>-->
+                    </tbody>
+                </table>
                 <div class="row">
                     <div class="col-md-6">
                         <form class="form-horizontal">
@@ -91,34 +96,6 @@
                         </form>
                     </div>
                 </div>
-                <a class="btn btn-success" href="create.html">
-                    <span class="glyphicon glyphicon-plus"></span> 新建
-                </a>
-                <div class="input-group tableSearchContainer col-md-6">
-                    <input type="text" id="searchContent" class="form-control" placeholder="内容">
-                    <span class="input-group-btn">
-                        <button id="searchBtn" class="btn btn-default" type="button">搜索</button>
-                    </span>
-                </div>
-                <table id="myTable" class="dataTable">
-                    <thead>
-                    <tr>
-                        <th>内容</th>
-                        <th>评论者</th>
-                        <th>评论产品</th>
-                        <th>回复</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <!--<tr>
-                        <td><span title="评论的内容">评论的内容</span></td>
-                        <td><a href="userDetail/1">用户1</a></td>
-                        <td><a href="proDetail/1">产品1</a></td>
-                        <td><a href="#" class="reply">回复</a>&nbsp;<a href="#" class="delete">删除</a></td>
-                    </tr>-->
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -138,7 +115,7 @@
                     <div class="form-group">
                         <label  class="control-label col-md-2">评论内容*</label>
                         <div class="col-md-8">
-                            <p id="commentContent">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                            <p id="commentContent">评论详情评论详情评论详情评论详情评论详情评论详情</p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -149,7 +126,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" class="btn btn-success" value="确定">
+                            <input type="submit" class="btn btn-primary" value="确定">
                         </div>
                     </div>
                 </form>

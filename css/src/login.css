@@ -1,0 +1,117 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    margin: 0px;
+    padding:0px;
+    height: 100%;
+    position: relative;
+    font-family: "Arail","微软雅黑","Heiti";
+    background: #333;
+    box-sizing: border-box;
+}
+.pCenter{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background:#fff;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    box-shadow:0 2px 5px rgba(0,0,0,0.3);
+}
+.tCenter{
+    text-align: center;
+}
+.logo{
+    display: block;
+    font-size: 0px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left:50%;
+    top:-60px;
+    transform: translateX(-50%);
+    background:#56abff;
+    border-radius: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.logo .glyphicon{
+    font-size: 40px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+.appTitle{
+    text-align: center;
+    margin: 60px 0px 30px 0px;
+    font-size: 24px;
+}
+.row{
+    width: 70%;
+    margin: 30px auto;
+    font-size: 14px;
+    position: relative;
+}
+.ctrlLabel{
+    color: #727171;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 60px;
+    display: inline-block;
+    text-align: right;
+}
+.ctrlInput{
+    width: 100%;
+    height: 40px;
+    border: #ddd 1px solid;
+    border-radius: 2px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    background:#f4f5f7;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+}
+.ctrlInput.error{
+    border: #e76565 solid 1px;
+    background:#f7e3e3;
+}
+.ctrlCheck{
+    
+}
+.ctrlBtn{
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    background: #56abff;
+    border-radius: 2px;
+}
+.ctrlBtn:hover{
+    background: #3399ff;
+    cursor: pointer;
+}
+label.error{
+    color: #c00;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    text-align: center;
+}
+.row.rememberMe{
+    margin-bottom:0;
+}
+.rememberMe .ctrlCheck{
+    margin-right:10px;
+}
+.row.submit{
+    margin-top:10px;
+}

@@ -1,4 +1,4 @@
-document.write('<ul class="menu">'+
+/*document.write('<ul class="menu">'+
 
         '<li class="item">'+
             '<span class="glyphicon glyphicon-flag"></span>'+
@@ -23,4 +23,5 @@ document.write('<ul class="menu">'+
                 '</li>'+
             '</ul>'+
         '</li>'+
-    '</ul>');
+    '</ul>');*/
+$("#menuWrapper").load("menu.html")
