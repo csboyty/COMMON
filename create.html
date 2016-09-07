@@ -1,58 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="webkit" name="renderer">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <meta name="keywords" content="xxxx"/>
     <meta name="description" content="xxxx">
-    <title>xxxx后台管理</title>
+    <title>后台管理</title>
     <!--<base href="http://localhost/cidic-artifacts/ca/frontend/">-->
-
-    <link href="css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
-
-    <link href="css/src/main.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/src/main.css">
+    <script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"></script>
 </head>
 <body>
 
-<div class="header">
-    <h1 class="logo">xxxxx</h1>
-    <a href="#" class="logout">退出</a>
+<div id="headerWrapper"></div>
+<script src="header.js"></script>
+
+<div class="left">
+    <div id="menuWrapper"></div>
+    <script src="menu.js"></script>
 </div>
-
-<nav class="left">
-
-    <ul class="menu">
-
-        <li class="item">
-            <span class="glyphicon glyphicon-flag"></span>
-            <a class="link" href="mgr.html">管理</a>
-        </li>
-        <li class="item">
-            <span class="glyphicon glyphicon-th-list"></span>
-            <a class="link">子菜单</a>
-            <span class="glyphicon glyphicon-chevron-down rightIcon"></span>
-            <ul class="subMenu">
-                <li class="sItem">
-                    <span class="circle">原点</span>
-                    <a class="sLink" href="#">子菜单1</a>
-                </li>
-                <li class="sItem">
-                    <span class="circle">原点</span>
-                    <a class="sLink" href="#">子菜单2</a>
-                </li>
-                <li class="sItem">
-                    <span class="circle">原点</span>
-                    <a class="sLink" href="#">子菜单3</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-
-</nav>
 
 <section class="right">
     <article class="main">
