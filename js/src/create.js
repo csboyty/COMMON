@@ -30,9 +30,6 @@ var create=(function(config,functions){
             functions.showLoading();
             $(form).ajaxSubmit({
                 dataType:"json",
-                data:{
-                    intro:tinyMCE.editors[0].getContent()
-                },
                 success:function(response){
                     if(response.success){
                         $().toastmessage("showSuccessToast",config.messages.optSuccess);
@@ -61,8 +58,8 @@ $(document).ready(function(){
         uploadContainer:"uploadContainer",
         fileAddCb:null,
         progressCb:null,
-        uploadedCb:function(info,file,up){        	
-            //ºóÌ¨µÄup-tokenÀïÃæÒª×¢Ã÷·µ»ØÍ¼Æ¬ĞÅÏ¢
+        uploadedCb:function(info,file,up){
+            //åå°çš„up-tokené‡Œé¢è¦æ³¨æ˜è¿”å›å›¾ç‰‡ä¿¡æ¯
             if(info.w==500&&info.h==500){
                 $("#imageUrl").val(info.url);
 
@@ -82,14 +79,24 @@ $(document).ready(function(){
         toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview media | forecolor backcolor emoticons',
         //image_advtab: true,
-        plugins : 'link image preview fullscreen table textcolor colorpicker code'
-
+        plugins : 'link image preview fullscreen table textcolor colorpicker code',
+        setup: function (ed) {
+            ed.on('blur', function (e) {
+                $("#intro").val(ed.getContent());
+                if(ed.getContent()){
+                    $(".error[for='intro']").remove();
+                }
+            });
+        }
     });
 
     $("#myForm").validate({
         ignore:[],
         rules:{
             image:{
+                required:true
+            },
+            intro:{
                 required:true
             },
             name:{
@@ -99,6 +106,9 @@ $(document).ready(function(){
         },
         messages:{
             image:{
+                required:config.validErrors.required
+            },
+            intro:{
                 required:config.validErrors.required
             },
             name:{
