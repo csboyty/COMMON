@@ -6,13 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 var functions=(function(config){
-    var aLiYun = {
-        host: "",
-        policy: "",
-        accessKey: "",
-        signature: "",
-        expire: 0
-    };
 
     //浏览器前缀
     var prefixes=["Moz",'webkit','ms','O'];
@@ -369,9 +362,9 @@ var functions=(function(config){
             var uploader = Qiniu.uploader({
                 runtimes: 'html5',    //上传模式,依次退化
                 browse_button: params.uploadBtn,       //上传选择的点选按钮，**必需**
-                uptoken_url:  config.qiNiu.upTokenUrl,
+                uptoken_url:  config.uploader.qiNiu.upTokenUrl,
                 multi_selection:params.multiSelection,
-                domain: config.qiNiu.uploadDomain,
+                domain: config.uploader.qiNiu.uploadDomain,
                 container: params.uploadContainer,//上传区域DOM ID，默认是browser_button的父元素，
                 filters: {
                     mime_types : [
@@ -404,7 +397,7 @@ var functions=(function(config){
                     'FileUploaded': function(up, file, info) {
                         if(typeof params.uploadedCb === "function"){
                             var response = JSON.parse(info);
-                            response.url=config.qiNiu.bucketDomain + response.key;
+                            response.url=config.uploader.qiNiu.bucketDomain + response.key;
                             params.uploadedCb(response,file,up);
                         }
                     },
@@ -443,7 +436,7 @@ var functions=(function(config){
         },
         sendRequest: function () {
             var xmlhttp = null,
-                serverUrl = config.uploader.getSignatureUrl;
+                serverUrl = config.uploader.aLiYun.getSignatureUrl;
 
             if (window.XMLHttpRequest) {
                 xmlhttp = new XMLHttpRequest();
@@ -463,14 +456,14 @@ var functions=(function(config){
             var now = Date.parse(new Date()) / 1000;
             var body, obj;
 
-            if (aLiYun.expire < now + 3) {
+            if (config.aLiYun.expire < now + 3) {
                 body = this.sendRequest();
                 obj = eval("(" + body + ")");
-                aLiYun.host = obj['host'];
-                aLiYun.policy = obj['policy'];
-                aLiYun.accessKey = obj['accessKey'];
-                aLiYun.signature = obj['signature'];
-                aLiYun.expire = parseInt(obj['expire']);
+                config.aLiYun.host = obj['host'];
+                config.aLiYun.policy = obj['policy'];
+                config.aLiYun.accessKey = obj['accessKey'];
+                config.aLiYun.signature = obj['signature'];
+                config.aLiYun.expire = parseInt(obj['expire']);
                 return true;
             }
             return false;
@@ -483,14 +476,14 @@ var functions=(function(config){
             filename=this.generateUniqueFileName(filename);
             var new_multipart_params = {
                 'key' : filename,
-                'policy': aLiYun.policy,
-                'OSSAccessKeyId': aLiYun.accessKey,
+                'policy': config.aLiYun.policy,
+                'OSSAccessKeyId': config.aLiYun.accessKey,
                 'success_action_status' : '200', //让服务端返回200,不然，默认会返回204
-                'signature': aLiYun.signature
+                'signature': config.aLiYun.signature
             };
 
             up.setOption({
-                'url': aLiYun.host,
+                'url': config.aLiYun.host,
                 'multipart_params': new_multipart_params
             });
         },
@@ -563,7 +556,7 @@ var functions=(function(config){
             uploader.bind("FileUploaded", function (up, file, res) {
                 if (res.status == 200) {
                     var key=up.getOption("multipart_params")["key"];
-                    res.url=aLiYun.host+"/"+key;
+                    res.url=config.aLiYun.host+"/"+key;
                     if (typeof params.uploadedCb === "function") {
                         params.uploadedCb(res, file, up);
                     }

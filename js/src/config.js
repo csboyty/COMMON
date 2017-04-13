@@ -7,12 +7,33 @@
  */
 var config={
     baseUrl:"",
-    qiNiu:{
-    	upTokenUrl:"http://localhost/jinyuanwuye/web/qi-niu/up-token",
-        uploadDomain:"http://qiniu-plupload.qiniudn.com/",
-        bucketDomain:"http://7xplk9.com1.z0.glb.clouddn.com/",
-        swfUrl:"js/lib/Moxie.swf"
+    uploader:{
+        url:"#",
+        swfUrl:"js/lib/Moxie.swf",
+        sizes:{
+            all:"5120m",
+            img:"2m"
+        },
+        filters:{
+            all:"*",
+            zip:"zip,rar",
+            img:"jpg,JPG,jpeg,JPEG,png,PNG"
+        },
+        qiNiu:{
+            upTokenUrl:"qi-niu/up-token",
+            uploadDomain:"http://qiniu-plupload.qiniudn.com/",
+            bucketDomain:"http://7xplk9.com1.z0.glb.clouddn.com/"
+        },
+        aLiYun:{
+            getSignatureUrl:"#",
+            host: "",
+            policy: "",
+            accessKey: "",
+            signature: "",
+            expire: 0
+        }
     },
+
     ajaxUrls:{
         commentsGetAll:"data/json/comments.json",
         commentsGetByPage:"data/json/comments.json",
@@ -29,19 +50,6 @@ var config={
             "0":"未处理",
             "1":"处理中",
             "2":"处理完成"
-        }
-    },
-    uploader:{
-        url:"#",
-        swfUrl:"js/plupload/plupload.flash.swf",
-        sizes:{
-            all:"5120m",
-            img:"2m"
-        },
-        filters:{
-            all:"*",
-            zip:"zip,rar",
-            img:"jpg,JPG,jpeg,JPEG,png,PNG"
         }
     },
     validErrors:{
