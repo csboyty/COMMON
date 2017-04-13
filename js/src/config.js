@@ -15,6 +15,7 @@ var config={
     },
     ajaxUrls:{
         commentsGetAll:"data/json/comments.json",
+        commentsGetByPage:"data/json/comments.json",
         commentDelete:"comment/:id/delete"
     },
     dataTable:{
