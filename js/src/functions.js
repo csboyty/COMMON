@@ -291,8 +291,8 @@ var functions=(function(config){
                 browse_button:params.uploadBtn,
                 container:params.uploadContainer,
                 multipart_params:params.multipartParams,
-                url:config.uploader.url,
-                flash_swf_url:config.baseUrl+config.uploader.swfUrl,
+                url:document.getElementById("baseUrl").getAttribute("href")+config.uploader.url,
+                flash_swf_url:document.getElementById("baseUrl").getAttribute("href")+config.uploader.swfUrl,
                 filters : [
                     {title : "Media files", extensions : params.filter}
                 ]
