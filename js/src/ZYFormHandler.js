@@ -30,7 +30,7 @@ ZYFormHandler.prototype.submitForm=function(form){
  * 用ajax提交form，数据以json字符串的形式提交
  * @param form
  */
-ZYFormHandler.prototype.submitFormWithPS=function(form){
+ZYFormHandler.prototype.submitFormWithJSON=function(form){
     var me=this,
         formObj=$(form).serializeObject();
     //formObj.intro=tinyMCE.editors[0].getContent();
